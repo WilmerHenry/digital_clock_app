@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 // Asegúrate de que este nombre coincida exactamente con el 'name' en tu pubspec.yaml
 import 'package:digital_clock_app/main.dart';
+import 'package:digital_clock_app/presentation/widgets/time_display.dart';
 
 void main() {
   testWidgets('Digital Clock render test', (WidgetTester tester) async {
@@ -11,7 +12,8 @@ void main() {
 
     // Buscamos componentes específicos que definimos en la interfaz profesional
     // Verificamos la existencia del icono de reloj
-    expect(find.byIcon(Icons.access_time_filled), findsOneWidget);
+    // Verificamos la existencia del widget de tiempo
+    expect(find.byType(TimeDisplay), findsOneWidget);
 
     // Verificamos que se esté renderizando texto (la hora y la fecha)
     expect(find.byType(Text), findsAtLeastNWidgets(1));
